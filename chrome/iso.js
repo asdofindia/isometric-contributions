@@ -85,15 +85,15 @@ Iso = (function() {
         toggleSetting: option
       });
     });
-    chrome.storage.local.get('toggleSetting', function(result) {
-      if (result.toggleSetting != null) {
-        ($(".ic-toggle-option." + result.toggleSetting)).addClass('active');
-        return contributionsBox.addClass("ic-" + result.toggleSetting);
-      } else {
+    // chrome.storage.local.get('toggleSetting', function(result) {
+    //   if (result.toggleSetting != null) {
+        // ($(".ic-toggle-option." + result.toggleSetting)).addClass('active');
+        // return contributionsBox.addClass("ic-" + result.toggleSetting);
+    //   } else {
         ($('.ic-toggle-option.cubes')).addClass('active');
-        return (contributionsBox.removeClass('ic-squares')).addClass('ic-cubes');
-      }
-    });
+        (contributionsBox.removeClass('ic-squares')).addClass('ic-cubes');
+    //   }
+    // });
     html = "<span class=\"ic-footer\">\n  <a href=\"#\" class=\"ic-2d-toggle\">Show normal chart below ▾</a>\n</span>";
     ($(html)).appendTo($('.ic-contributions-wrapper'));
     ($('.ic-2d-toggle')).click(function(e) {
